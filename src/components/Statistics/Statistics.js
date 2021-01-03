@@ -1,4 +1,32 @@
-//import statisticalData from '../source/statistical-data.json';
+import statisticalData from '../../source/statistical-data.json';
+import React from 'react';
+import PropTypes from 'prop-types';
+import './statistics.css';
+
+function Statistics({ imgUrl, name, price, quantity }) {
+  return (
+    <div>
+      <img src={imgUrl} alt={name} width="640" />
+      <h2>{name}</h2>
+      <p>Price: {price}$</p>
+
+      <p>Quantity: {quantity < 50 ? 'Few left' : 'In stock'}</p>
+      <button type="button">Add to cart</button>
+    </div>
+  );
+}
+
+Statistics.defaultProps = {
+  imgUrl:
+    'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+};
+
+Statistics.propTypes = {
+  imgUrl: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
+
 
 /*Компонент должен принимать два пропа title и stats, в которых указывается заголовок и объект статистики.
 
@@ -29,8 +57,6 @@ stats - массив объектов содержащих информацию 
     </li>
   </ul>
 </section>
-Пример использования
-import statisticalData from '/путь/к/statistical-data.json';
+ */
 
-<Statistics title="Upload stats" stats={statisticalData} />;
-<Statistics stats={statisticalData} />; */
+export default Statistics;

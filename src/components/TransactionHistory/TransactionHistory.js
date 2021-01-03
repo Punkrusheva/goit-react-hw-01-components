@@ -1,5 +1,33 @@
-//import transactions from '../source/transactions.json';
+import transactions from '../../source/transactions.json';
+import React from 'react';
+import PropTypes from 'prop-types';
 
+function TransactionHistory({ imgUrl, name, price, quantity }) {
+  return (
+    <div>
+      <img src={imgUrl} alt={name} width="640" />
+      <h2>{name}</h2>
+      <p>Price: {price}$</p>
+
+      <p>Quantity: {quantity < 50 ? 'Few left' : 'In stock'}</p>
+      <button type="button">Add to cart</button>
+    </div>
+  );
+}
+
+TransactionHistory.defaultProps = {
+  imgUrl:
+    'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+};
+
+TransactionHistory.propTypes = {
+  imgUrl: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
+
+//propTypes 
+//defaultProps
 /*Данные для списка доступны в формате JSON в файле transactions.json. Это массив объектов, каждый объект описывает одну транзакцию со следующими свойствами:
 
 id — уникальный идентификатор транзакции
@@ -31,7 +59,6 @@ currency - тип валюты
     </tr>
   </tbody>
 </table>
-Пример использования
-import transactions from 'путь/к/transactions.json';
+ */
 
-<TransactionHistory items={transactions} />; */
+export default TransactionHistory;
