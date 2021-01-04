@@ -1,17 +1,15 @@
-import statisticalData from '../../source/statistical-data.json';
 import React from 'react';
 import PropTypes from 'prop-types';
 import './statistics.css';
-console.log(statisticalData[0]);
 
-function Statistics({ title }) {
+function Statistics({stats, title}) {
   return (
-    <section class="statistics">
-  {title && <h2 class="title">{title}</h2>}
-      <ul class="stat-list">
-        {statisticalData.map(statisticalData => (
-        <li key={statisticalData.id} class="item"><span class="label">{statisticalData.label}</span>
-      <span class="percentage">{statisticalData.percentage}%</span></li>
+    <section className="statistics">
+      {title && <h2 className="title">{title}</h2>}
+      <ul className="stat-list">
+        {stats.map(stats => (
+        <li key={stats.id} className="item"><span className="label">{stats.label}</span>
+      <span className="percentage">{stats.percentage}%</span></li>
       ))}
   </ul>
 </section>
@@ -19,14 +17,16 @@ function Statistics({ title }) {
 }
 
 Statistics.defaultProps = {
-  imgUrl:
-    'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+  percentage:
+    '0',
 };
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+   stats: PropTypes.exact({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired
+  }).isRequired,
 };
 
 export default Statistics;
