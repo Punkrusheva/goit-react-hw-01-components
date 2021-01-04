@@ -18,7 +18,7 @@ function FriendList({ imgUrl, name, price, quantity }) {
 
 FriendList.defaultProps = {
   imgUrl:
-    'https://dummyimage.com/640x480/2a2a2a/ffffff&text=Product+image+placeholder',
+    'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ims-ghaziabad.ac.in%2Ffaculty%2Fprofile%2Famit-sharma&psig=AOvVaw0dKQcdoP8QP6VGKBB12Zkm&ust=1609833833025000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJi51cPoge4CFQAAAAAdAAAAABAD',
 };
 
 FriendList.propTypes = {
