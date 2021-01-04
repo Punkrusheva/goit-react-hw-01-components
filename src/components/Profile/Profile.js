@@ -42,11 +42,11 @@ Profile.defaultProps = {
 Profile.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(PropTypes.shape({
+  stats: PropTypes.exact({
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired
-  })).isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 };

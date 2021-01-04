@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './statistics.css';
 
-function Statistics({stats, title}) {
+function Statistics({statistic, title}) {
   return (
     <section className="statistics">
       {title && <h2 className="title">{title}</h2>}
       <ul className="stat-list">
-        {stats.map(stats => (
-        <li key={stats.id} className="item"><span className="label">{stats.label}</span>
-      <span className="percentage">{stats.percentage}%</span></li>
+        {statistic.map(statistic => (
+        <li key={statistic.id} className="item"><span className="label">{statistic.label}</span>
+      <span className="percentage">{statistic.percentage}%</span></li>
       ))}
   </ul>
 </section>
@@ -23,10 +23,11 @@ Statistics.defaultProps = {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-   stats: PropTypes.exact({
+  statistic: PropTypes.arrayOf(PropTypes.exact({
+     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     percentage: PropTypes.number.isRequired
-  }).isRequired,
+  }),).isRequired,
 };
 
 export default Statistics;
