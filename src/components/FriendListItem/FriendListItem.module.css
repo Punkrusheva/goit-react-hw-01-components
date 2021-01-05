@@ -1,9 +1,4 @@
-.friend-list {
-  width: 220px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.friend-list .item {
+.item {
   position: relative;
   display: flex;
   align-items: center;
@@ -15,7 +10,8 @@
   padding: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.friend-list .item::before {
+
+.item::before {
   position: absolute;
   background-color: #ee5e55;
   border-radius: 10px;
@@ -26,17 +22,18 @@
   left: 15px;
 }
 
-.friend-list .avatar {
+.avatar {
   width: 40px;
   border-radius: 8px;
   margin-left: 40px;
 }
-.friend-list .name {
+
+.name {
   margin: 0;
   margin-left: 10px;
 }
 
-.friend-list .status {
+.status {
   position: absolute;
   z-index: 10;
   border-radius: 10px;

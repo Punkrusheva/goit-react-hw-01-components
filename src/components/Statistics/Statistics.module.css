@@ -8,7 +8,7 @@
   margin-bottom: 15px;
 }
 
-.statistics .title {
+.title {
   font-size: 15px;
   font-weight: bold;
   text-transform: uppercase;
@@ -19,14 +19,14 @@
   margin-bottom: 18px;
 }
 
-.statistics .stat-list {
+.statList {
   display: flex;
   background: #f3f6f9;
   width: 100%;
   margin: 0;
 }
 
-.statistics li {
+.item {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -42,7 +42,7 @@
   color: #eaeef3;
 }
 
-.statistics .percentage {
+.percentage {
   font-weight: bold;
   font-size: 14px;
 }

@@ -1,31 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './friendList.css';
+import styles from './FriendList.module.css';
 
-function FriendList({ friends }) {
+function FriendList({children}) {
   return (
-    <ul className="friend-list">
-  {friends.map(friends => (
-    <li key={friends.id} className="item">
-      {friends.isOnline && <span className="status"></span>}
-  <img className="avatar" src={friends.avatar} alt={friends.name} width="48" />
-        <p className="name">{friends.name}</p>
-</li>
-  ))}
-</ul>
+    <ul className={styles.friendList}>
+      {children}
+    </ul>
   );
 }
 
 FriendList.defaultProps = {
-  avatar:
-    'https://www.ims-ghaziabad.ac.in/images/faculty/1498127141img.png',
-  isOnline: false,
+  children: "",
 };
 
 FriendList.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool.isRequired,
+  children: PropTypes.node,
 };
 
 export default FriendList;

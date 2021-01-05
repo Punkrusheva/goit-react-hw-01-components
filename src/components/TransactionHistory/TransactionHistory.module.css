@@ -1,4 +1,4 @@
-.transaction-history {
+.transaction {
   width: 500px;
   font-size: 10px;
   font-weight: normal;
@@ -7,13 +7,14 @@
   padding: 4px;
   margin-left: auto;
   margin-right: auto;
+  border-collapse: collapse;
 }
 
-.transaction-history tr {
+tr {
   background: #ffffff;
 }
 
-.transaction-history th {
+th {
   height: 30px;
   background: #00bcd5;
   border: 1px solid #eaeaea;
@@ -22,6 +23,6 @@
   padding-top: 5px;
 }
 
-.transaction-history td {
+td {
   padding: 4px;
 }
